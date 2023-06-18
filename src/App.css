@@ -1,19 +1,326 @@
-.App {
-  text-align: center;
+/* colors
+#232D41 - background dark
+#FF01B8 - pink
+#00E0FF - blue
+#0e1729 - very dark blue
+#078b9d highway map color
+*/
+
+* {
+                                                     /* overflow-x: hidden; */
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h1{
+  overflow: hidden;
+}
+
+.index-minus1{
+  position: relative;
+  z-index: 6;
+}
+.menu-logo{
+  position: absolute;
+  top: 10%;
+  right:10%;
+  width: 30%;
+}
+
+
+/* -------------------------about page ------------------------*/
+
+
+
+/* --------------------------end of about ----------------------- */
+
+
+
+
+/* --------------- contact form ------------------  */
+
+.map-container{
+  padding-top: 4rem;
+  position: relative;
+  /* height: 50rem; */
+  height: calc(1rem + 80vh);
+  background-color: #232D41;
+}
+
+
+
+.contact-header{
+  color: #00E0FF;
+  font-family: 'Roboto';
+  font-weight: bold;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: left;
+  /* animation: 1s ease-out 0s 1 slideFromLeft; */
+}
+
+
+.message-send {
+  width: 200px;
+  height: 50px;
+}
+
+
+@keyframes slideFromLeft{
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(0);
   }
 }
 
-.App-header {
+.grid-container {
+  display: grid;
+  grid-template-columns: 48% 50%;
+  grid-gap: 2%;
+  grid-template-areas: 
+    "name email" 
+    "number number"
+    "message message"
+    "left button"
+    ;
+
+  
+}
+
+
+
+.grid-item-name {
+  grid-area: name;
+}
+
+.grid-item input,
+.grid-item textarea{
+  width: 100%;
+}
+
+.grid-item-button  {
+  text-align: right;
+  grid-area: button;
+
+}
+
+
+.grid-item-email{
+
+  grid-area: email;
+}
+
+.grid-item-number{
+  /* background-color: #00E0FF; */
+  grid-area: number;
+}
+
+.grid-item-message {
+  grid-area: message;
+}
+
+form input,
+form button{
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: #0e1729;
+  color: white;
+  
+}
+
+
+.flexbox-container-contact{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-content: center;
+  align-items: center;
+  /* align-items: center; */
+  /* align-items: flex-start; */
+}
+
+/* .stuff{
+  padding-top: 10rem;
+} */
+
+
+.flexbox-item-contact{
+  /* box-sizing: border-box; */
+  /* position: relative; */
+  /* transition: all .8s ease; */
+  /* text-align: center; */
+  width: 80%;
+  margin: 1rem;
+}
+
+
+.text-input{
+  color: white;
+  background-color: #0e1729;
+  border: none;
+  font-size: 2rem;
+  position: relative;
+  transition: all .8s ease;
+  text-align: left;
+  /* width: 400px; */
+  /* margin: 10px; */
+}
+
+.input-border{
+  display: inline-block;
+  background: #00E0FF;
+  position: relative;
+  width: 0;
+  top:-18%;
+  height: 3%;
+  transition: all ease-in-out .15s;
+}
+
+.text-input:active,
+.text-input:focus{
+  outline: none;
+}
+
+.text-input:active+.input-border,
+.text-input:focus+.input-border{
+  width: 100%;
+}
+
+input:focus{
+
+  /* animation: 1s ease-out 0s 1 slideBorderBottom; */
+  /* border-bottom: 0.15rem solid #00E0FF; */
+  outline: none;
+}
+
+.red {
+  background: #FF01B8;
+  width: 100%;
+}
+
+.notification-custom-icon {
+  flex-basis: 20%;
+  position: relative;
+  display: inline-block;
+  padding: 8px 8px 8px 12px;
+
+  /* .fa {
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    font-size: 28px;
+    position: relative;
+    transform: translate(-50%, -50%);
+  } */
+}
+
+.notification-custom-success {
+  width: 100%;
+  display: flex;
+  background-color: #a7288c;
+
+  /* .notification-custom-icon {
+    border-left: 8px solid darken(#28a745, 15%);
+  } */
+}
+.notification-custom-icon {
+  border-left: 8px solid darken(#28a745, 15%);
+}
+
+.stuff{
+  background-color: #FF01B8;
+}
+
+
+/* .contact-form{
+  padding-top: 8rem;
+} */
+
+
+/* end of contact form */
+
+
+
+.topnav {
+  z-index: 9;
+  position: fixed;
+  color: aliceblue;
+  top: 0;
+  width: 100%;
+  /* height: 5rem; */
+  align-content: start;
+  background-color: #232D41;
+  display: flex;
+  vertical-align: top;
+  white-space: nowrap;
+
+  justify-content: space-between;
+}
+
+.navbar-link-home {
+  text-decoration: none;
+}
+
+.navbar-logo{
+    position: relative;
+    
+    left: 1%;
+    padding-left: 0.5rem;
+    color: #FF01B8;
+    font-size: 2.813rem;
+    /* font-size: 3vw; */
+
+    text-shadow: -2px 3px #00E0FF;
+    font-family: 'Roboto';
+
+}
+
+
+
+.fa-chevron-down{
+  color: #00E0FF;
+}
+
+.next-section {
+  position: absolute;
+  right: 5%;
+  bottom: 4vh;
+  font-size: 50px;
+  text-align: right;
+  opacity: 0.7;
+  color:white;
+}
+
+
+/* .outline-blue{
+  position: absolute;
+  left: 5%;
+  top: 70%;
+  color: white;
+  width: 200px;
+  font-size: 30px;
+  text-decoration: none;
+  background-color: #232D41;
+  border: 1px solid #00E0FF;
+  border-radius: 4px;
+}
+
+.outline-blue:hover {
+  background-color: #00E0FF;
+  color: #232D41;
+} */
+
+
+
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,17 +329,247 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* @media screen and (max-width: 875px ){
+  .grid-container{
+    grid-template-areas:
+    "name name"
+    "email email"
+    "number number"
+    "message message"
+    "button button"
+    
   }
-  to {
-    transform: rotate(360deg);
+
+  .map-container{
+    position: relative;
+    height: 40rem;
+    width: 100%;
+
   }
+
+  .flexbox-item-contact{
+    width: 50rem;
+    margin: 1rem;
+  }
+
+  .contact-form{
+    padding-top: 3rem;
+  }
+  
+
+} */
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  
+
+
+
+/* -------------end of about----------- */
+
+
+/* Styles */
+.grid-container{
+  grid-template-areas:
+  "name name"
+  "email email"
+  "number number"
+  "message message"
+  "button button"
+  
+}
+
+.map-container{
+  position: relative;
+  /* height: calc(1rem + 100vh); */
+  height: 40rem;
+  width: 100%;
+
+}
+
+.flexbox-item-contact{
+  width: 50rem;
+  margin: 1rem;
+}
+
+.contact-form{
+  padding-top: 3rem;
+}
+.topnav{
+    padding-top: 0.5rem;
+}
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+  
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}
+
+
+
+.notification-container {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999999;
+  width: 320px;
+  padding: 0px 15px;
+  max-height: calc(100% - 30px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.notification {
+  box-sizing: border-box;
+  padding: 15px 15px 15px 58px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #ccc;
+  box-shadow: 0 0 5px #999;
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 1.2em;
+  position: relative;
+  opacity: 0.9;
+  margin-top: 15px;
+}
+
+.notification .title {
+  font-size: 1em;
+  line-height: 1.2em;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+.notification:hover, .notification:focus {
+  opacity: 1;
+}
+
+.notification-enter {
+  visibility: hidden;
+  transform: translate3d(100%, 0, 0);
+}
+
+.notification-enter.notification-enter-active {
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.4s;
+}
+
+.notification-leave {
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+}
+
+.notification-leave.notification-leave-active {
+  visibility: hidden;
+  transform: translate3d(100%, 0, 0);
+  transition: all 0.4s;
+}
+
+.notification:before {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  margin-top: -14px;
+  display: block;
+  font-family: 'Roboto';
+  width: 28px;
+  height: 28px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 28px;
+}
+
+.notification-info {
+  background-color: #2f96b4;
+}
+
+.notification-info:before {
+  content: "";
+}
+
+.notification-success {
+  background-color: #51a351;
+}
+
+.notification-success:before {
+  content: "✓";
+}
+
+.notification-warning {
+  background-color: #ff01b7cc;
+}
+
+.notification-warning:before {
+  content: "!";
+}
+
+.notification-error {
+  background-color: #bd362f;
+}
+
+.notification-error:before {
+  content: "";
 }
